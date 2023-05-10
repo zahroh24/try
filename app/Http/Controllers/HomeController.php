@@ -37,7 +37,18 @@ class HomeController extends Controller
         $menu = menu::all();
         return view('user.home', compact('menu'));
     }
-
+    public function listmenu(){
+       $menu = menu::all();
+        return view('user.listmenu');
+    }
+    public function about(){
+        $menu = menu::all();
+         return view('user.aboutus');
+     }
+     public function reservet(){
+        $menu = menu::all();
+         return view('user.reservet');
+     }
     public function reservation(Request $request){
         $data = new reservation;
         $data->date=$request->date;

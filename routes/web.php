@@ -32,10 +32,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
+    Route::get('/listmenu',[HomeController::class, 'listmenu']);
+    Route::get('/about',[HomeController::class, 'about']);
+    Route::get('/reservet',[HomeController::class, 'reservet']);
     Route::get('/add_menu_view',[AdminController::class, 'addview']);
 
-    Route::post('/upload_menu',[AdminController::class, 'upload']);
+    Route::post('/upload_menu',[AdminController::class, 'upload'])->name("upload_menu");
     Route::post('/reservation',[HomeController::class, 'reservation']);
     Route::get('/approved/{id}',[AdminController::class, 'aproved']);
     Route::get('/canceled/{id}',[AdminController::class, 'canceled']);

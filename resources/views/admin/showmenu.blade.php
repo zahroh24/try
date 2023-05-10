@@ -36,7 +36,7 @@
 <td>{{$menu->Price}}</td>
 <td><img height="50" width="100" src="menuimage/{{$menu->Image}}"></td>
 <td><a onclick="return confirm('Are You Sure To Delete This?')" class="btn btn-danger" href="{{url('deletemenu',$menu->id)}}">Delete</a></td>
-<td><a class="btn btn-primary" href="{{url('updatemenu',$menu->id)}}">Update</a></td>
+<td><a class="btn btn-primary" href="{{url('update_menu',$menu->id)}}">Update</a></td>
 </tr>
 @endforeach
 </table>

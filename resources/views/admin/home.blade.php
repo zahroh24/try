@@ -18,7 +18,7 @@
         
         @include('admin.navbar')
         
-        @include('admin.body')
+       
           
         </div>
         

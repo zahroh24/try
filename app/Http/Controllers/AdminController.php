@@ -14,19 +14,23 @@ class AdminController extends Controller
     }
     public function upload(Request $request){
         
+        menu::create([
+            "Name" => $request->Name,
+            "Price" => $request->Price,
+            "Categories" => $request->Categories,
+            "Description" => $request->Description,
+            
+            ]);
         $menu=new menu;
         $image=$request->file;
         $imagename=time().'.'.$image->getClientoriginalExtension();
         $request->file->move('menuimage', $imagename);
-        $menu->image=$imagename;
-        $menu->Name=$request->Name;
-        $menu->Price=$request->Price;
-        $menu->Categories=$request->Categories;
-        $menu->Description=$request->Description;
+        $menu->Image=$imagename;
+
 
         $menu->save();
         return redirect()->back()->with('message', 'Menu Added Successfully');
-    }
+    } 
     public function showmenu(){
         $data = menu::all();
         return view('admin.showmenu', compact('data'));
@@ -39,29 +43,18 @@ class AdminController extends Controller
     }
     public function updatemenu($id){
         $data=menu::find($id);
-        return view('admin.update_menu', compact('data'));
+        return view('admin.update_menu');
     }
-    public function editdoctor(Request $request, $id)
+    public function update(Request $request, $id)
     {
-       $doctor = menu::find($id);
-       $doctor->name=$request->name;
-       $doctor->phone=$request->phone;
-       $doctor->speciality=$request->speciality;
-       $doctor->name=$request->name;
-       $doctor->room=$request->room;
-
-       $image=$request->file;
-
-       if($image)
-       {
-
-$imagename=time().'.'.$image->getClientOriginalExtension();
+       $data=menu::find($id);
+       $image=$request->image;
+       if($image){
+        $imagename=time().".".$image->getClientoriginalExtension();
+        $request->$image->move('menuimage',$imagename);
+        $data->image=$imagename;
+       }
+        $data->name=$request->Name;
         
-        $request->file->move('doctorimage', $imagename);
-        $doctor->image=$imagename;
-        }
-
-        $doctor->save();
-        return redirect()->back()->with('message','Doctor Details Updated Successfully');
     }
 }

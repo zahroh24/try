@@ -32,8 +32,7 @@
         <button type="button" class="close" data-bs-dismiss="alert">
           x
     </button>
-  </div>
-    {{session()->get('message')}}
+  </div>    {{session()->get('message')}}
     @endif
         <form action="{{url('upload_menu')}}" method="POST" enctype="multipart/form-data">
 
@@ -42,29 +41,25 @@
         
             <div style="padding:15px;">
                 <label>Menu Name</label>
-                <input type="text" style="color:black;" name="name" placeholder="Write the name" Required="">
+                <input type="text" style="color:black;" id="Name" name="Name" placeholder="Write the name" Required="">
 
             </div>
+            
             <div style="padding:15px;">
                 <label>Categories</label>
-                <select style="color:black; width: 200px">
-                <option>--Select--</option>
-                <option value="Drink">Drink</option>
-                <Option value="Lunch">Lunch</option>
-                <Option value="Dinner">Dinner</option>
-              </select>
+                <input type="text" style="color:black;" id="Categories" name="Categories" placeholder="(Drink, Food)" Required="">
 
             </div>
             <div style="padding:15px;">
                 <label>Price</label>
-                <input type="varchar" style="color:black;" name="price" placeholder="Enter the price" Required="">
+                <input type="varchar" style="color:black;" id="Price" name="Price" placeholder="Enter the price" Required="">
 
             </div>
 
             <div style="padding:15px;">
                 <label>Description</label>
-                <input type="text" style="color:black;" name="description" placeholder="Write the description" Required="">
-
+                <input type="text" style="color:black;" id="Description" name="Description" placeholder="Write the description" Required="">
+  </div>
             
             <div style="padding:15px;">
                 <label>Menu Image</label>

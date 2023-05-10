@@ -10,7 +10,7 @@
 						
 						<p>Canopus Restaurant was a hidden gem nestled in the bustling city. The moment you walked in, you were transported to a different world - one of elegance, warmth, and hospitality. The restaurant's decor was a fusion of traditional and contemporary, with soft lighting and comfortable seating that invited you to stay awhile. </p>
 						<p>The aroma of the restaurant's signature dishes wafted through the air, tantalizing your taste buds. And when you finally took that first bite, it was a symphony of flavors that left you wanting more. Canopus Restaurant was more than just a place to eat; it was an experience that you would always remember.</p>
-						<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a>
+						<a class="btn btn-lg btn-circle btn-outline-new-white" href="{{url('reservet')}}">Reservation</a>
 					</div>
 				</div>
 			</div>
